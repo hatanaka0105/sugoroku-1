@@ -13,22 +13,22 @@ bool GameMain::update()
 	if (endCount >= 4||checkEnd())
 	{
 		reslut();
-		cout << "‚Ç‚±‚É‚à’u‚¯‚È‚­‚È‚è‚Ü‚µ‚½"<<endl;
-		cout << "•‚Í"<<blackCount<<endl;
-		cout << "”’‚Í" << whiteCount << endl;
+		cout << "ã©ã“ã«ã‚‚ç½®ã‘ãªããªã‚Šã¾ã—ãŸ"<<endl;
+		cout << "é»’ã¯"<<blackCount<<endl;
+		cout << "ç™½ã¯" << whiteCount << endl;
 		if (blackCount > whiteCount)
 		{
-			cout << "•‚ÌŸ‚¿‚Å‚·"<< endl;
+			cout << "é»’ã®å‹ã¡ã§ã™"<< endl;
 		}
 		else if (blackCount < whiteCount)
 		{
-			cout << "”’‚ÌŸ‚¿‚Å‚·" << endl;
+			cout << "ç™½ã®å‹ã¡ã§ã™" << endl;
 		}
 		else
 		{
-			cout << "ˆø‚«•ª‚¯‚Å‚·" << endl;
+			cout << "å¼•ãåˆ†ã‘ã§ã™" << endl;
 		}
-		cout << "‰½‚©ƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢";
+		cout << "ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„";
 		_getch();
 
 		return false;
@@ -41,13 +41,13 @@ bool GameMain::update()
 
 		if (oldInputX != 0)
 		{
-			cout << "‘O‰ñ‚Ì“ü—Í‚Í[" << oldInputX << "," << oldInputY << "]‚Å‚µ‚½B\n";
+			cout << "å‰å›ã®å…¥åŠ›ã¯[" << oldInputX << "," << oldInputY << "]ã§ã—ãŸã€‚\n";
 		}
 	}
 	else
 	{
-		cout << "‘Šè‚ÍƒXƒLƒbƒv‚µ‚Ü‚µ‚½B\n";
-		cout << "‰½‚©ƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢";
+		cout << "ç›¸æ‰‹ã¯ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã—ãŸã€‚\n";
+		cout << "ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„";
 		endCount++;
 	}
 
@@ -78,16 +78,16 @@ bool GameMain::update()
 
 		if (oldInputX != 0)
 		{
-			cout << "‘O‰ñ‚Ì“ü—Í‚Í[" << oldInputX << "," << oldInputY << "]‚Å‚µ‚½B\n";
-			cout << "“G‚Ì”Ô‚Å‚·B" << endl;
-			cout << "‰½‚©ƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢";
+			cout << "å‰å›ã®å…¥åŠ›ã¯[" << oldInputX << "," << oldInputY << "]ã§ã—ãŸã€‚\n";
+			cout << "æ•µã®ç•ªã§ã™ã€‚" << endl;
+			cout << "ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„";
 			_getch();
 		}
 	}
 	else
 	{
-		cout << "‚Ç‚±‚É‚à’u‚¯‚È‚¢‚Ì‚ÅƒXƒLƒbƒv‚µ‚Ü‚·B"<<endl;
-		cout << "‰½‚©ƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢";
+		cout << "ã©ã“ã«ã‚‚ç½®ã‘ãªã„ã®ã§ã‚¹ã‚­ãƒƒãƒ—ã—ã¾ã™ã€‚"<<endl;
+		cout << "ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„";
 		endCount++;
 		_getch();
 	}
@@ -108,16 +108,16 @@ bool GameMain::update()
 
 void GameMain::playerInput()
 {
-	cout << "‚ ‚È‚½‚Ì”Ô‚Å‚·B\n";
+	cout << "ã‚ãªãŸã®ç•ªã§ã™ã€‚\n";
 	while (true)
 	{
-		cout << "1`8‚Ì”ÍˆÍ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n";
-		cout << "c ‰¡";
+		cout << "1ï½8ã®ç¯„å›²ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„\n";
+		cout << "ç¸¦ æ¨ª";
 		cin >> inputX >> inputY;
 		x = inputX[0] - '0';
 		y = inputY[0] - '0';
 		cout << "\n";
-		//Î‚ªŠù’è‚Ì”ÍˆÍ“à‚È‚ç‚Îturu‚Åbreak
+		//çŸ³ãŒæ—¢å®šã®ç¯„å›²å†…ãªã‚‰ã°turuã§break
 		if ((x > 0 && x <= sizeof(reversi.stone) / sizeof(reversi.stone[0])) && (y > 0 && y <= sizeof(reversi.stone[0]) / sizeof(reversi.stone[0][0])) && inputX.length() == 1 && inputY.length() == 1)
 		{
 			if (reversi.isSet[x - 1][y - 1] == true)
@@ -128,20 +128,20 @@ void GameMain::playerInput()
 				}
 				else
 				{
-					cout << "‚»‚ÌêŠ‚É‚Í‚·‚Å‚ÉÎ‚ª’u‚¢‚Ä‚ ‚è‚Ü‚·B";
+					cout << "ãã®å ´æ‰€ã«ã¯ã™ã§ã«çŸ³ãŒç½®ã„ã¦ã‚ã‚Šã¾ã™ã€‚";
 				}
 			}
 			else
 			{
-				cout << "‚»‚ÌêŠ‚É’u‚¯‚Ü‚¹‚ñB";
+				cout << "ãã®å ´æ‰€ã«ç½®ã‘ã¾ã›ã‚“ã€‚";
 			}
 		}
-		cout << "‚à‚¤ˆê“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n";
+		cout << "ã‚‚ã†ä¸€åº¦å…¥åŠ›ã—ã¦ãã ã•ã„\n";
 	}
 
 }
 
-void GameMain::reslut()
+void GameMain::reslut() //ã‚¹ãƒšãƒ«ãƒŸã‚¹ byHATANAKA
 {
 	int count = 0;
 	for (int i = 0; i < Wide; i++)
